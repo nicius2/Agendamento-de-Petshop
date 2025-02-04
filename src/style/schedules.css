@@ -1,0 +1,127 @@
+.period-agendamento {
+    background-color: var(--background-tertiary);
+    width: 771px;
+    margin-top: 32px;
+    border-radius: 8px;
+}
+
+.period-agendamento>header {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #2E2C30;
+}
+
+#period {
+    font: var(--lb-large);
+    padding-left: 12px;
+}
+
+#hour {
+    display: flex;
+    margin-left: auto;
+    font: var(--lb-large);
+    color: var(--content-secondary);
+}
+
+
+
+ul {
+    list-style: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+
+    & .hour {
+        font: var(--lb-small);
+        padding-right: 12px;
+    }
+
+    & .pet {
+        font: var(--lb-small);
+    }
+
+    & .name {
+        font: var(--pg-small);
+        color: var(--content-secondary);
+        overflow: hidden
+    }
+
+    & .service {
+        font: var(--pg-small);
+        color: var(--content-secondary);
+        display: flex;
+        overflow: hidden
+    }
+
+    & .cancel {
+        font: var(--pg-small);
+        color: var(--content-tertiary);
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    & .cancel:hover {
+        color: var(--content-primary);
+    }
+
+    & .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+
+.button {
+    background-color: var(--content-brand);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font: var(--lb-large);
+    color: #050505;
+    display: grid;
+    margin-left: auto;
+    margin-right: 70px;
+    cursor: pointer;
+    margin-bottom: 33px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 10px #9282FA;
+    transform: scale(1.1);
+    color: var(--content-primary);
+}
+
+.button:active {
+    transform: scale(1.05);
+  }
+
+@media (width <= 40rem) {
+    .period-agendamento {
+        width: 350px;
+        overflow-x: hidden;
+    }
+
+    ul li {
+        flex-direction: column;
+        justify-content: start;
+        gap: 0.325rem;
+        border-bottom: 1px solid #8181813d;
+
+        span:nth-child(3) {
+            margin-left: auto;
+            margin-top: 0.75rem;
+        }
+    }
+
+
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="src/style/index.css">
+    <link rel="icon" href="src/assets/icon.svg">
+    <title>Agendamento de petshop</title>
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="src/assets/logo.svg" alt="logo">
+    </div>
+
+
+
+    <div class="container">
+        <form class="form">
+            <div class="agendamento">
+                <header>
+                    <h1>Sua agenda</h1>
+                    <small>Aqui você pode ver todos os clientes e serviços agendados para hoje.</small>
+                </header>
+                <div class="input">
+                    <i><img src="src/assets/calendar.svg" alt="calendar"></i>
+                    <input type="date" name="date" id="date">
+                </div>
+            </div>
+        </form>
+
+        <!-- Manhã -->
+        <section class="period-agendamento">
+            <header>
+                <img src="src/assets/morning-icon.svg" alt="manhã">
+                <label id="period">Manhã</label>
+                <label id="hour">09h-12h</label>
+            </header>
+            <ul class="period">
+                <li>
+                    <div>
+                        <span class="hour">09:00</span>
+                        <span class="pascient">
+                            <strong class="pet">thor</strong>
+                            <span class="name">/ Francisco</span>
+                        </span>
+                    </div>
+
+                    <span class="service">Vacinação</span>
+                    <span class="cancel">Remover Agendamento</span>
+
+                </li>
+            </ul>
+        </section>
+
+        <!-- Tarde -->
+        <section class="period-agendamento">
+            <header>
+                <img src="src/assets/afternoon-icon.svg" alt="manhã">
+                <label id="period">Tarde</label>
+                <label id="hour">13h-18h</label>
+            </header>
+            <ul class="period">
+                <li>
+                    <div>
+                        <span class="hour">09:00</span>
+                        <span class="pascient">
+                            <strong class="pet">thor</strong>
+                            <span class="name">/ Francisco</span>
+                        </span>
+                    </div>
+
+                    <span class="service">Vacinação</span>
+                    <span class="cancel">Remover Agendamento</span>
+
+                </li>
+                <li>
+                    <div>
+                        <span class="hour">09:00</span>
+                        <span class="pascient">
+                            <strong class="pet">thor</strong>
+                            <span class="name">/ Francisco</span>
+                        </span>
+                    </div>
+
+                    <span class="service">Vacinação</span>
+                    <span class="cancel">Remover Agendamento</span>
+
+                </li>
+            </ul>
+        </section>
+
+        <!-- Noite -->
+        <section class="period-agendamento">
+            <header>
+                <img src="src/assets/nigth-icon.svg" alt="manhã">
+                <label id="period">Noite</label>
+                <label id="hour">19h-21h</label>
+            </header>
+            <ul class="period">
+                <li>
+                    <div>
+                        <span class="hour">09:00</span>
+                        <span class="pascient">
+                            <strong class="pet">thor</strong>
+                            <span class="name">/ Francisco</span>
+                        </span>
+                    </div>
+
+                    <span class="service">Vacinação</span>
+                    <span class="cancel">Remover Agendamento</span>
+
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <button class="button">Novo agendamento</button>
+
+    <div class="form-popup">
+        <form>
+            <header>
+                <div class="close">
+                    <img src="./src/assets/close.svg" alt="botao de fechar">
+                </div>
+                <h1>Agende um atendimento
+
+                </h1>
+                <p>Preencha os dados do cliente para realizar o agendamento:</p>
+            </header>
+
+            <div class="input-wrapper">
+                <fieldset>
+                    <legend>Nome do tutor</legend>
+
+                    <div class="input-inner">
+                        <img src="./src/assets/user-icon.svg" alt="icone de usuario" class="tutor-icon" />
+
+                        <input type="text" placeholder="Helena Souza" class="fielder" id="name-tutor" required />
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Nome do pet</legend>
+
+                    <div class="input-inner">
+                        <img src="./src/assets/pet-icon.svg" alt="icone de usuario" class="tutor-icon" />
+
+                        <input type="text" placeholder="Cheddar" class="fielder" id="name-pet" required />
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Telefone</legend>
+
+                    <div class="input-inner">
+                        <img src="./src/assets/phone-icon.svg" alt="icone de usuario" class="tutor-icon" />
+
+                        <input type="text" placeholder="(00) 0 0000-0000" class="fielder" id="phone" required />
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Descrição do serviço</legend>
+
+                    <div class="input-inner">
+                        <textarea name="desc" id="description" cols="30" rows="3" placeholder="Banho e tosa"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="hourSchedule">
+                    <fieldset>
+                        <legend>Data</legend>
+                        <div class="input-inner">
+                            <img src="src/assets/calendar.svg" alt="calendar">
+                            <input type="date" name="date" id="date">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Hora</legend>
+                        <div class="input-inner">
+                            <img src="src/assets/clock.svg" alt="relogio">
+                            <input type="datetime" name="datetime" 
+                            id="datetime" placeholder="12:00">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Agenda</button>
+        </form>
+    </div>
+</body>
+
+</html>
