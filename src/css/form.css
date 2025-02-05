@@ -117,7 +117,8 @@ fieldset {
 
 .option-unavaible {
     color: var(--content-primary);
-    background-color: var(--border-secondary)
+    pointer-events: none;
+    background-color: var(--border-secondary);
 }
 
  

@@ -8,3 +8,5 @@ import "./css/schedules.css"
 
 // JS
 import "./modules/form/openForm.js"
+import "./modules/form/date.js"
+import "./modules/page-loader.js"
