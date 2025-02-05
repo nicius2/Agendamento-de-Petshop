@@ -1,3 +1,3 @@
-export const apiConfig = {
-    baseURL: "http://localhost:3333",
+const apiConfig = {
+    baseUrl: "http://localhost:3100"
 }

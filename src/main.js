@@ -1,13 +1,10 @@
 "use strict"
 
 // CSS
-import "./style/global.css"
-import "./style/main.css"
-import "./style/form.css"
-import "./style/schedules.css"
+import "./css/global.css"
+import "./css/main.css"
+import "./css/form.css"
+import "./css/schedules.css"
 
 // JS
-import "./module/date/dateSchedule.js"
-import "./module/form/pop-Up.js"
-import "./module/page-loader.js"
-import "./module/form/submit.js"
+import "./modules/form/openForm.js"
