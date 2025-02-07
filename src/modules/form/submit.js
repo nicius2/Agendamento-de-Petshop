@@ -54,6 +54,13 @@ form.onsubmit = async (event) => {
 
         const when = dayjs(dateForm.value).add(hour, "hour")
 
+        const selectDescrition = document.getElementById("description")
+        const desc = selectDescrition.value
+
+        if(!desc) {
+            return alert("Descreva qual é será o serviço prestado")
+        }
+        
         const id = new Date().getTime()
 
         await scheduleNew({
@@ -61,6 +68,7 @@ form.onsubmit = async (event) => {
             name,
             pet,
             phone,
+            desc,
             when
         })
 
