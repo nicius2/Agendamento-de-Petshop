@@ -5,20 +5,15 @@ const select = document.querySelector("select")
 
 export async function hourLoad({date}) {
 
-    // const unavailableHours = dailySchedules.map((schedule) => 
-    // dayjs(schedule.when).format("HH:mm"))
-
+    select.innerHTML = ""
     const opening = hoursSchedules.map((hour) => {
-        // Recupera somente a hora
         const [scheduleHour] = hour.split(":")
 
-        const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs())
-
-        // const available = !unavailableHours.includes(hour) && !isHourPast
+        const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs())
 
         return{
             hour,
-            available: isHourPast
+            available: !isHourPast
         }
     })
 
