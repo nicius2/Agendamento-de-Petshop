@@ -3,61 +3,59 @@ import dayjs from "dayjs"
 
 const selectMorning = document.querySelector(".manha")
 const selectAfternoon = document.querySelector(".tarde")
-const selectNigth = document.querySelector(".manha")
-const ul = document.querySelector("ul")
+const selectNigth = document.querySelector(".noite")
 
 export async function schedulesShow({ dailySchedules }) {
     try {
-        selectMorning.innerHTML = ""
         selectAfternoon.innerHTML = ""
+        selectMorning.innerHTML = ""
         selectNigth.innerHTML = ""
 
-        // Renderiza os agendamentos por periodo
         dailySchedules.forEach((schedule) => {
-            const li = document.createElement("li")
+            const item = document.createElement("li")
+            item.setAttribute("data-id", schedule.id)
 
             const div = document.createElement("div")
-            const spanHour = document.createElement("span") 
-            spanHour.classList.add("hour")
-            const spanPascient = document.createElement("span")
-            spanPascient.classList.add("pascient")
+
+            const spanHours = document.createElement("span")
+            spanHours.classList.add("hour")
+            spanHours.textContent = dayjs(schedule.when).format("HH:mm")
+
+            const spanPacient = document.createElement("span")
+            spanPacient.classList.add("pascient")   
             const strongPet = document.createElement("strong")
             strongPet.classList.add("pet")
+            strongPet.textContent = schedule.pet
+
             const spanName = document.createElement("span")
             spanName.classList.add("name")
+            spanName.textContent = ` / ${schedule.name}`
 
-            const spanServices = document.createElement("span")
-            spanServices.classList.add("service")
+            const spanService = document.createElement("span")
+            spanService.textContent = schedule.desc
+            spanService.classList.add("service")
             const spanCancel = document.createElement("span")
             spanCancel.classList.add("cancel")
             spanCancel.textContent = "Remover Agendamento"
 
-            spanHour.textContent = dayjs(schedule.when).format("HH:mm")
-
-            strongPet.textContent = schedule.pet
-            spanName.textContent = (` / ${schedule.name}`)
-            spanPascient.append(strongPet, spanName)
+            spanPacient.append(strongPet, spanName)
+            div.append(spanHours, spanPacient)
+            item.append(div, spanService, spanCancel)
             
-            div.append(spanHour, spanPascient)
-            spanServices.textContent = schedule.desc
-            li.append(div, spanServices, spanCancel)
-            ul.append(li)
+            const hour = dayjs(schedule.when).format("HH:mm")
 
-            // const hour = dayjs(schedule.when).hour()
-            // if(hour <= 12) {
-            //     selectMorning.appendChild(ul)
-            // } else if (hour >= 12 && hour < 18) {
-            //     selectAfternoon.appendChild(ul)
-            // } else {
-            //     selectNigth.appendChild(ul)
-            // }
-
+            if(hour <= 12) {
+                selectMorning.appendChild(item)
+            } else if (hour >= 12 && hour <= 18) {
+                selectAfternoon.appendChild(item)
+            } else {
+                selectNigth.appendChild(item)
+            }
         })
+
+
     } catch (error) {
-        alert("Não foi possivel exibir o agendamento")
         console.log(error)
+        alert("Não foi possivel mostrar o agendamento")
     }
-
-
-
 }

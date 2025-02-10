@@ -172,6 +172,10 @@ fieldset {
         justify-content: end;
         margin-top: -20px;
     }
+
+    #paragraf-forms {
+        display: none;
+    }
     
     form h1 {
     margin-top: -10px;

@@ -1,3 +1,3 @@
 export const apiConfig = {
-    baseUrl: "http://localhost:3333",
+    baseUrl: "https://tricolor-butter-taste.glitch.me",
 }

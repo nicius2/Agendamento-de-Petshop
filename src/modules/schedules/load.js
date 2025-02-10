@@ -6,7 +6,6 @@ const selectDate = document.querySelector(".dateForm")
 
 export async function scheduleDay() {
     const date = selectDate.value
-    // const dailySchedules = scheduleFetchByDay({ date })
 
     // Busca na API o agendamento  
     const dailySchedules = await scheduleFetchByDay({ date })
@@ -14,5 +13,5 @@ export async function scheduleDay() {
     schedulesShow({ dailySchedules })
 
     // Renderiza as horas   
-    hourLoad({ date })
+    hourLoad({ date, dailySchedules })
 }

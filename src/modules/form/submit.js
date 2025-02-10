@@ -1,5 +1,6 @@
 import dayjs from "dayjs"
 import { scheduleNew } from "../../services/schedule-new.js"
+import { scheduleDay } from "../../modules/schedules/load.js"
 
 const selectName = document.getElementById("name-tutor")
 const selectPet = document.getElementById("name-pet")
@@ -60,7 +61,7 @@ form.onsubmit = async (event) => {
         if(!desc) {
             return alert("Descreva qual é será o serviço prestado")
         }
-        
+
         const id = new Date().getTime()
 
         await scheduleNew({
@@ -72,6 +73,14 @@ form.onsubmit = async (event) => {
             when
         })
 
+        // Recarrega o agendamento
+        await scheduleDay()
+
+        selectName.textContent = ""
+        selectPet.textContent = ""
+        selectDescrition.textContent = ""
+        selectPhone.textContent = ""
+        selectHours.textContent = ""
     } catch (error) {
         console.log(error)
         alert("Não foi possivel cadastrar o agendamento")
