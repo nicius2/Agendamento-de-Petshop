@@ -3,7 +3,7 @@
   <img src="https://icon.icepanel.io/Technology/svg/Babel.svg" width="50" style="border-radius:50%; margin: 0 10px;"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" width="50"/>
 </div>
-![[Pasted image 20250210150623.png]]
+![[https://prnt.sc/hKJkN33N3qt6]]
 ### 🧑‍💻Projeto
 Consiste em um sistema de agendamento para um petshop, cadastrando seus dados em uma API. Usando o método `GET` para consumir a API de acordo com o agendamento do dia e `POST` para enviar os dados no corpo da requisição
 
